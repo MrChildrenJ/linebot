@@ -1,0 +1,26 @@
+name: Daily Market Push
+
+on:
+  schedule:
+    # TW Time 08:00 = UTC 00:00
+    - cron: "0 0 * * *"
+  workflow_dispatch:  # Allow manual trigger for convenience of testing
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run push script
+        env:
+          LINE_TOKEN: ${{ secrets.LINE_TOKEN }}
+          LINE_GROUP_ID: ${{ secrets.LINE_GROUP_ID }}
+        run: python daily_push.py
