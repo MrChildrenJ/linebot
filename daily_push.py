@@ -11,7 +11,6 @@ load_dotenv()
 CHANNEL_ACCESS_TOKEN = os.environ["LINE_TOKEN"]
 GROUP_ID = os.environ["LINE_GROUP_ID"]
 
-# 美股漲綠跌紅（台灣習慣可改成漲紅跌綠，見下方 COLOR_UP/DOWN）
 COLOR_UP = "#00AA5B"   # 綠（漲）
 COLOR_DOWN = "#D32F2F" # 紅（跌）
 COLOR_FLAT = "#888888"
@@ -23,6 +22,8 @@ EQUITY_INDICES = {
     "S&P 500": "^GSPC",
     "Nasdaq": "^IXIC",
     "SOX": "^SOX",
+    "日經指數": "^N225",
+    "台灣加權": "^TWII"
     "VIX": "^VIX",
 }
 
