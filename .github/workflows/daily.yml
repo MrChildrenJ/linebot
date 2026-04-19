@@ -2,8 +2,8 @@ name: Daily Market Push
 
 on:
   schedule:
-    # TW Time 07:00 = UTC 23:00(-1)
-    - cron: "30 0 * * 0-5"
+    # TW Time 06:53 = UTC 22:53(-1)
+    - cron: "53 22 * * 0-4"
   workflow_dispatch:  # Allow manual trigger for convenience of testing
 
 jobs:
